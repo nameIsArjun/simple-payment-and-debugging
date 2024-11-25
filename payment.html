@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <form id="paymentForm" aria-labelledby="paymentFormHeading">
+        <h1 id="paymentFormHeading">Payment Information</h1>
+
+        <!-- Name on Card -->
+        <label for="nameOnCard">Name on Card</label>
+        <input
+          type="text"
+          id="nameOnCard"
+          name="nameOnCard"
+          value="Arjun"
+          required
+          placeholder="Arjun Puri"
+        />
+        <span id="error-nameOnCard" class="error-message"></span>
+
+        <!-- Credit Card Number -->
+        <label for="cardNumber">Credit Card Number</label>
+        <input
+          type="text"
+          id="cardNumber"
+          value="1234567890123456"
+          name="cardNumber"
+          maxlength="19"
+          required
+          placeholder="1234567890123456"
+        />
+        <span id="error-cardNumber" class="error-message"></span>
+
+        <!-- Expiration Date (Month and Year) -->
+        <label for="expiryMonth">Expiration Date</label>
+        <div class="expiry-date">
+          <input
+            type="text"
+            id="expiryMonth"
+            name="expiryMonth"
+            maxlength="2"
+            required
+            placeholder="MM"
+          />
+          <span>/</span>
+          <input
+            type="text"
+            id="expiryYear"
+            name="expiryYear"
+            maxlength="4"
+            required
+            placeholder="YYYY"
+          />
+        </div>
+        <span id="error-expiryDate" class="error-message"></span>
+
+        <!-- CVV -->
+        <label for="cvv">CVV</label>
+        <input
+          type="text"
+          id="cvv"
+          name="cvv"
+          maxlength="4"
+          required
+          placeholder="123"
+        />
+        <span id="error-cvv" class="error-message"></span>
+
+        <!-- Loader and Submit Button -->
+        <div id="loader" class="loader hidden"></div>
+        <button type="submit" id="submitButton">Submit Payment</button>
+        
+        <span id="error-payment" class="error-message"></span>
+        <span id="success-payment" class="success-message"></span>
+      </form>
+    </main>
+    <script src="paymentHelper.js"></script>
+  </body>
+</html>
